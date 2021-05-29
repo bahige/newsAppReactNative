@@ -1,9 +1,9 @@
 import React from 'react'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from  'react-native-vector-icons/FontAwesome';
-import Headlines from './Headlines';
-import Sources from './Sources';
-import History from './History';
+import HeadlineStack from './HeadlineStack/HeadlineStack';
+import SourcesStack from './SourcesStack/SourcesStack';
+import HistoryStack from './HistoryStack/HistoryStack';
 
 const Main = () => {   
     const Tab = createBottomTabNavigator();
@@ -19,19 +19,19 @@ const Main = () => {
             }}>
             <Tab.Screen
                 name = "Headlines"
-                component = {Headlines}
+                component = {HeadlineStack}
                 options= {({tintColor,focused}) => 
                     <Icon name="newspaper" type='font-awesome' size={22} color={tintColor}/>}>
             </Tab.Screen>
             <Tab.Screen
                 name = "Sources"
-                component = {Sources}
+                component = {SourcesStack}
                 options= {({tintColor,focused}) => 
                     <Icon name="rocket" type='font-awesome' size={22} color={tintColor}/>}>
             </Tab.Screen>
             <Tab.Screen
                 name = "History"
-                component = {History}
+                component = {HistoryStack}
                 options= {({tintColor,focused}) => 
                     <Icon name="history" type='font-awesome' size={22} color={tintColor}/>}>
             </Tab.Screen>

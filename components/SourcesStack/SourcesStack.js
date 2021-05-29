@@ -1,12 +1,12 @@
 import React from 'react'
 import { ScrollView, Text } from 'react-native'
 
-const Headlines = () => {
+const SourcesStack = () => {
     return (
         <ScrollView>
-            <Text>This is the Headlines Component</Text>
+            <Text>This is the Sources Component</Text>
         </ScrollView>
     )
 }
 
-export default Headlines
+export default SourcesStack
