@@ -1,4 +1,5 @@
-import { END_LOADING_HEADLINES, END_LOADING_SOURCES, ERROR_HEADLINES, ERROR_SOURCES, FETCH_HEADLINES, FETCH_SOURCES, START_LOADING_HEADLINES, START_LOADING_SOURCES } from "./actionTypes";
+import { END_LOADING_HEADLINES, END_LOADING_SOURCES, ERROR_HEADLINES, ERROR_SOURCES, FETCH_HEADLINES,
+ FETCH_SOURCES, FETCH_HEADLINES_BY_SOURCE, START_LOADING_HEADLINES, START_LOADING_SOURCES } from "./actionTypes";
 
 
 export const headlinesReducer = (state = {isLoading : true,  data:{},  error:""}, action) => {
@@ -8,6 +9,8 @@ export const headlinesReducer = (state = {isLoading : true,  data:{},  error:""}
         case END_LOADING_HEADLINES:
             return {...state, isLoading: false};
         case FETCH_HEADLINES:
+            return {...state, data: action.payload};
+        case FETCH_HEADLINES_BY_SOURCE:
             return {...state, data: action.payload};
         case ERROR_HEADLINES:
             return {...state, error: action.payload};

@@ -14,7 +14,7 @@ const HeadlineStack = () => {
             headerTitleStyle: {
                 color:'#fff'
             }}}/>
-            <Stack.Screen name = "HeadlineDetails" component={HeadlineDetails}
+            <Stack.Screen name = "Headline Details" component={HeadlineDetails}
             options= {{ headerStyle: {backgroundColor: '#512DA8'},
             headerTintColor: "#fff",
             headerTitleStyle: {

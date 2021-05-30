@@ -1,31 +1,42 @@
-import React, {useEffect} from 'react'
-import { View, Text } from 'react-native'
+import React, {useState, useEffect} from 'react'
+import { View, Text, ActivityIndicator, FlatList } from 'react-native'
 import {useSelector, useDispatch} from 'react-redux';
 import { getHeadlines, getSources } from '../../../redux/actions';
+import PickerContainer from '../../Picker/PickerContainer';
+import DetailedArticle from '../../DetailedArticle'
 
 
-const Headlines = () => {
+const Headlines = (props) => {
 
+    const {navigation} = props;
     const headlinesData = useSelector(state => state.headlines);
-    const {isLoading, data, error } = headlinesData;
+    const {isLoading, data:{totalResults, articles}, error } = headlinesData;
 
-    // const sourcesData = useSelector(state => state.sources);
-
+    const [selectedCountry, setSelectedCountry] = useState('eg');
+    const [selectedCategory, setSelectedCategory] = useState('business');
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getSources());
-        dispatch(getHeadlines());
-        // console.log('sourcesData', sourcesData);
-        console.log('headlinesData', headlinesData);
-    }, [])
+        dispatch(getHeadlines(selectedCountry, selectedCategory));
+    }, [selectedCountry, selectedCategory])
+
+    const renderItem = ({item, index}) => (
+        <DetailedArticle article ={item} index={index} navigation={navigation}/>
+    )
 
     return (
         <View>
-            {isLoading ? <Text> Loading </Text> : <Text> Finished Loading </Text>}
-            <Text>{data.articles}</Text>
-            <Text>Headline  Stack </Text>
+            <PickerContainer country={selectedCountry} category={selectedCategory}
+                             setCountry={setSelectedCountry} setCategory={setSelectedCategory}/>
+            <Text>totalResults: {totalResults} </Text>
+            {isLoading ? <ActivityIndicator size="large"/> : 
+            error ? <View> {error} </View> :
+            articles && 
+            <FlatList data = {articles}
+                    renderItem = {renderItem}
+                    keyExtractor = { item => item.title}/>
+            }
         </View>
     )
 }

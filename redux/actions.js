@@ -1,5 +1,5 @@
 import {END_LOADING_HEADLINES, END_LOADING_SOURCES, ERROR_HEADLINES, ERROR_SOURCES, 
-    FETCH_HEADLINES, FETCH_SOURCES, START_LOADING_HEADLINES, START_LOADING_SOURCES, } from './actionTypes';
+    FETCH_HEADLINES, FETCH_HEADLINES_BY_SOURCE, FETCH_SOURCES, START_LOADING_HEADLINES, START_LOADING_SOURCES, } from './actionTypes';
 import * as api from './api';
 
 
@@ -15,6 +15,19 @@ export const getHeadlines = (country, business) => async(dispatch) => {
         dispatch({type:ERROR_HEADLINES, payload:error})
     }
 }
+
+export const getHeadlinesBySource = (sources) => async(dispatch) => {
+    try {
+        dispatch({type:START_LOADING_HEADLINES});
+        const {data} = await api.fetchHeadlinesBySource(sources);
+        dispatch({type:FETCH_HEADLINES_BY_SOURCE, payload: data});
+        dispatch({type:END_LOADING_HEADLINES});
+
+    } catch(error){
+        dispatch({type:ERROR_HEADLINES, payload:error})
+    }
+}
+
 
 export const getSources = () => async(dispatch) => {
     try{
