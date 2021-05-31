@@ -21,20 +21,34 @@ const Main = () => {
             <Tab.Screen
                 name = "Headlines"
                 component = {HeadlineStack}
-                options= {({tintColor,focused}) => 
-                    <Icon name="newspaper" type='font-awesome' size={22} color={tintColor}/>}>
+                // options= {({tintColor,focused}) => 
+                //     <Icon name="newspaper" type='font-awesome' size={22} color={tintColor}/>}
+                options={{
+                    tabBarLabel: 'Headlines',
+                    tabBarIcon: ({ color, size }) => (
+                        <Icon name="book" type='font-awesome' size={22} color={color}/>
+                    ),
+                  }}>
             </Tab.Screen>
             <Tab.Screen
                 name = "Sources"
                 component = {SourcesStack}
-                options= {({tintColor,focused}) => 
-                    <Icon name="rocket" type='font-awesome' size={22} color={tintColor}/>}>
+                options={{
+                    tabBarLabel: 'Sources',
+                    tabBarIcon: ({ color, size }) => (
+                        <Icon name="rss" type='font-awesome' size={22} color={color}/>
+                    ),
+                  }}>
             </Tab.Screen>
             <Tab.Screen
                 name = "History"
                 component = {HistoryStack}
-                options= {({tintColor,focused}) => 
-                    <Icon name="history" type='font-awesome' size={22} color={tintColor}/>}>
+                options={{
+                    tabBarLabel: 'History',
+                    tabBarIcon: ({ color, size }) => (
+                        <Icon name="history" type='font-awesome' size={22} color={color}/>
+                    ),
+                  }}>
             </Tab.Screen>
         </Tab.Navigator>
     )
