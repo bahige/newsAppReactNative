@@ -17,8 +17,6 @@ const HeadlinesPerSource = (props) => {
         dispatch(getHeadlinesBySource(source))
     }, [])
 
-    console.log("articles", articles);
-
     const renderItem = ({item, index}) => (
         <DetailedArticle article ={item} index={index} navigation={navigation}/>
     )

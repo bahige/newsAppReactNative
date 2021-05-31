@@ -10,7 +10,6 @@ justify-content: space-between;
 margin: 5px;
 align-self: center;
 border-color: #C0C0C0;
-border-top: solid;
 border-top-width: 1px;
 `
 

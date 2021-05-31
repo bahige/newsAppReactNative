@@ -20,7 +20,13 @@ const DetailedArticle = (props) => {
                 <ArticleTitle>{article.title}</ArticleTitle>
                 <ArticleDescription>{article.description}</ArticleDescription>
                 <ArticleSource>{article.source && article.source.name}</ArticleSource>
-                <ArticleDate><Moment format="MMMM DD, YYYY" date={article.publishedAt}></Moment> at <Moment format="h:mm:ss a" date={article.publishedAt}></Moment></ArticleDate>
+                <ArticleDate>
+                    <Moment format="MMMM DD, YYYY" date={article.publishedAt}></Moment> at <Moment format="h:mm:ss a" date={article.publishedAt}></Moment>
+                </ArticleDate>
+                <ArticleDate>
+                    {article.viewedAt ? "Last Viewed at : " : null}
+                    {article.viewedAt ? <Moment format='MMMM Do YYYY, h:mm:ss a' date={article.viewedAt}></Moment>  : null} 
+                </ArticleDate>
             </Pressable>
         </ArticleListItemContainer>
     )
