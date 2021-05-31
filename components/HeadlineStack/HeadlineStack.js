@@ -8,18 +8,21 @@ const HeadlineStack = () => {
     const Stack = createStackNavigator();
     return (
         <Stack.Navigator>
-            <Stack.Screen name = "Headlines" component={Headlines}
-            options= {{ headerStyle: {backgroundColor: '#512DA8'},
-            headerTintColor: "#fff",
-            headerTitleStyle: {
-                color:'#fff'
-            }}}/>
-            <Stack.Screen name = "Headline Details" component={HeadlineDetails}
-            options= {{ headerStyle: {backgroundColor: '#512DA8'},
-            headerTintColor: "#fff",
-            headerTitleStyle: {
-                color:'#fff'
-            }}}/>
+            <Stack.Screen name = "Headlines" 
+                component={Headlines}
+                options= {{ 
+                headerStyle: {backgroundColor: '#512DA8'},
+                headerTintColor: "#fff",
+                headerTitleStyle: {
+                    color:'#fff'
+                }}}/>
+            <Stack.Screen name = "Headline Details" 
+                component={HeadlineDetails}
+                options= {{ headerStyle: {backgroundColor: '#512DA8'},
+                headerTintColor: "#fff",
+                headerTitleStyle: {
+                    color:'#fff'
+                }}}/>
         </Stack.Navigator>
     )
 }

@@ -19,6 +19,10 @@ const Headlines = (props) => {
 
     useEffect(() => {
         dispatch(getHeadlines(selectedCountry, selectedCategory));
+    }, [])
+
+    useEffect(() => {
+        dispatch(getHeadlines(selectedCountry, selectedCategory));
     }, [selectedCountry, selectedCategory])
 
     const renderItem = ({item, index}) => (
@@ -29,9 +33,8 @@ const Headlines = (props) => {
         <View>
             <PickerContainer country={selectedCountry} category={selectedCategory}
                              setCountry={setSelectedCountry} setCategory={setSelectedCategory}/>
-            <Text>totalResults: {totalResults} </Text>
             {isLoading ? <ActivityIndicator size="large"/> : 
-            error ? <View> {error} </View> :
+            error ? <Text> {error} </Text> :
             articles && 
             <FlatList data = {articles}
                     renderItem = {renderItem}

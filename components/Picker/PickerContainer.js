@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import { View } from 'react-native'
+import React from 'react'
+import { View, StyleSheet } from 'react-native'
 import {Picker} from '@react-native-picker/picker';
 
 const PickerContainer = (props) => {
@@ -8,7 +8,7 @@ const PickerContainer = (props) => {
     return (
         <View>
             <Picker
-                style={{height:50, width:'100%'}}
+                style={styles.picker}
                 selectedValue={country}
                 onValueChange={(itemValue, itemIndex) =>
                     setCountry(itemValue)
@@ -17,7 +17,7 @@ const PickerContainer = (props) => {
                 <Picker.Item label="UAE" value="ae" />
             </Picker>
             <Picker
-                style={{height:50, width:'100%'}}
+                style={styles.picker}
                 selectedValue={category}
                 onValueChange={(itemValue, itemIndex) =>
                     setCategory(itemValue)
@@ -29,4 +29,12 @@ const PickerContainer = (props) => {
     )
 }
 
+const styles = StyleSheet.create({
+    picker:{
+        margin: 5,
+        height: 50,
+        width: "90%",
+        alignSelf:'center'
+    }
+})
 export default PickerContainer

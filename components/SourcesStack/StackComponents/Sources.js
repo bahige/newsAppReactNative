@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react'
-import { View, Text, ActivityIndicator, FlatList, Button } from 'react-native'
+import { View, Text, ActivityIndicator, FlatList, Pressable } from 'react-native'
 import {useSelector, useDispatch} from 'react-redux'
 import { getSources } from '../../../redux/actions';
+import {SourceListItem, SourceListButton} from '../../StyledComponents/SourceListItemStyledComponents'
 
 const Sources = (props) => {
     const {navigation} = props;
@@ -15,10 +16,13 @@ const Sources = (props) => {
     }, [])
 
     const renderItem = ({item, index}) => (
-        <View>
+        <SourceListItem>
             <Text>{item.name}</Text>
-            <Button title="VIEW" color="blue" onPress={()=> navigation.navigate("Headlines Per Source", {source: item.id})}/>
-        </View>
+            <Pressable 
+            onPress={()=> navigation.navigate("Headlines Per Source", {source: item.id})}>
+               <SourceListButton>VIEW</SourceListButton> 
+            </Pressable>
+        </SourceListItem>
     )
 
     return (
