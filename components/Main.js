@@ -21,8 +21,6 @@ const Main = () => {
             <Tab.Screen
                 name = "Headlines"
                 component = {HeadlineStack}
-                // options= {({tintColor,focused}) => 
-                //     <Icon name="newspaper" type='font-awesome' size={22} color={tintColor}/>}
                 options={{
                     tabBarLabel: 'Headlines',
                     tabBarIcon: ({ color, size }) => (

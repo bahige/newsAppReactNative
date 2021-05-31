@@ -15,7 +15,7 @@ border-top-width: 1px;
 
 export const SourceListButton = styled.Text`
 background-color: transparent;
-color: blue;
+color: #0000FF;
 margin: 5px;
 font-weight:bold;
 `

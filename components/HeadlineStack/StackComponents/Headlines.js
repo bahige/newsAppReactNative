@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { View, Text, ActivityIndicator, FlatList } from 'react-native'
 import {useSelector, useDispatch} from 'react-redux';
-import { getHeadlines, getSources } from '../../../redux/actions';
+import { getHeadlines } from '../../../redux/actions';
 import PickerContainer from '../../Picker/PickerContainer';
 import DetailedArticle from '../../DetailedArticle'
 
