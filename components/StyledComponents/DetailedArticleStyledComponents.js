@@ -38,7 +38,7 @@ margin:5px;
 
 export const ClearHistoryText = styled.Text`
 width:90%;
-background-color: blue;
+background-color: #A9A9A9;
 text-align: center;
 align-self: center;
 color: white;

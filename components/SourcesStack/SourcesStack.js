@@ -10,26 +10,43 @@ const SourcesStack = () => {
         <Stack.Navigator>
             <Stack.Screen name="Sources" 
                 component={Sources}
-                options= {{ 
-                headerStyle: {backgroundColor: '#512DA8'},
-                headerTintColor: "#fff",
-                headerTitleStyle: {
-                    color:'#fff'
-                }}}/>
+                options= {{
+                    title: "Sources",     
+                    headerStyle: {
+                        backgroundColor: '#000'
+                    },
+                    headerTintColor: "#fff",
+                    headerTitleStyle: {
+                        color:'#fff',
+                        textAlign: 'center',
+                        fontSize: 32,
+                        height: 50
+                    }}}/>
             <Stack.Screen name="Headlines Per Source" 
                 component={HeadlinesPerSource}
-                options= {{ headerStyle: {backgroundColor: '#512DA8'},
-                headerTintColor: "#fff",
-                headerTitleStyle: {
-                    color:'#fff'
-                }}}/>
+                options= {{
+                    title: "Sources Headlines",     
+                    headerStyle: {
+                        backgroundColor: '#000'
+                    },
+                    headerTintColor: "#fff",
+                    headerTitleStyle: {
+                        color:'#fff',
+                        textAlign: 'center',
+                        fontSize: 32,
+                        height: 50
+                    }}}/>
             <Stack.Screen name="Headline Details" 
                 component={HeadlineDetails}
-                options= {{ headerStyle: {backgroundColor: '#512DA8'},
-                headerTintColor: "#fff",
-                headerTitleStyle: {
-                    color:'#fff'
-                }}}/>
+                options= {{
+                    title: "" ,
+                    headerStyle: {
+                        backgroundColor: '#000'
+                    },
+                    headerTintColor: "#fff",
+                    headerTitleStyle: {
+                        color:'#fff'
+                    }}}/>
         </Stack.Navigator>
     )
 }

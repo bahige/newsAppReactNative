@@ -10,15 +10,25 @@ const HeadlineStack = () => {
         <Stack.Navigator>
             <Stack.Screen name = "Headlines" 
                 component={Headlines}
-                options= {{ 
-                headerStyle: {backgroundColor: '#512DA8'},
+                options= {{
+                title: "Today's Picks",     
+                headerStyle: {
+                    backgroundColor: '#000'
+                },
                 headerTintColor: "#fff",
                 headerTitleStyle: {
-                    color:'#fff'
+                    color:'#fff',
+                    textAlign: 'center',
+                    fontSize: 32,
+                    height: 50,
                 }}}/>
             <Stack.Screen name = "Headline Details" 
                 component={HeadlineDetails}
-                options= {{ headerStyle: {backgroundColor: '#512DA8'},
+                options= {{
+                title: "" ,
+                headerStyle: {
+                    backgroundColor: '#000'
+                },
                 headerTintColor: "#fff",
                 headerTitleStyle: {
                     color:'#fff'

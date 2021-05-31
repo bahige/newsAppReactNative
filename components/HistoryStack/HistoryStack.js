@@ -13,20 +13,29 @@ const HistoryStack = () => {
         <Stack.Navigator>
             <Stack.Screen name="Articles Visited By You" 
                 component={HeadlinesHistory}
-                options= {{ 
-                headerStyle: {backgroundColor: '#512DA8'},
-                headerTintColor: "#fff",
-                headerTitleStyle: {
-                    color:'#fff'
-                }}}/>
+                options= {{
+                    title: "Visited Headlines",     
+                    headerStyle: {
+                        backgroundColor: '#000'
+                    },
+                    headerTintColor: "#fff",
+                    headerTitleStyle: {
+                        color:'#fff',
+                        textAlign: 'center',
+                        fontSize: 32,
+                        height: 50
+                    }}}/>
             <Stack.Screen name = "Headline Details" 
                 component={HeadlineDetails}
-                options= {{ 
-                headerStyle: {backgroundColor: '#512DA8'},
-                headerTintColor: "#fff",
-                headerTitleStyle: {
-                    color:'#fff'
-                }}}/>
+                options= {{
+                    title: "" ,
+                    headerStyle: {
+                        backgroundColor: '#000'
+                    },
+                    headerTintColor: "#fff",
+                    headerTitleStyle: {
+                        color:'#fff'
+                    }}}/>
         </Stack.Navigator>
     )
 }

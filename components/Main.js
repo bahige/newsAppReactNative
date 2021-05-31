@@ -11,11 +11,12 @@ const Main = () => {
         <Tab.Navigator 
             tabBarOptions = {{
                 activeTintColor:'white',
-                inactiveTintColor:'gray',
+                inactiveTintColor:'	#808080',
                 labelStyle: {fontSize:14},
                 adaptive:true,
-                activeBackgroundColor:'#9575CD',
-                inactiveBackgroundColor: '#D1C4E9'
+                activeBackgroundColor:'#000',
+                inactiveBackgroundColor: '#D3D3D3',
+                labelPosition: 'below-icon'
             }}>
             <Tab.Screen
                 name = "Headlines"
