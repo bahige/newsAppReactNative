@@ -36,7 +36,7 @@ const HeadlinesHistory = (props) => {
             </Pressable>
             <FlatList data ={articlesArray}
                       renderItem={renderItem}
-                      keyExtractor={item => item.title }/>
+                      keyExtractor={(item, index) => index }/>
         </View>
     )
 }

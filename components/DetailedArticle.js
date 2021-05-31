@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Image, Pressable} from 'react-native';
+import {Image, Pressable} from 'react-native';
 import {saveArticlesToStorage} from './functions';
 import {ArticleTitle, ArticleListItemContainer, ArticleSource, ArticleDate, ArticleDescription} from './StyledComponents/DetailedArticleStyledComponents';
 import Moment from 'react-moment';
