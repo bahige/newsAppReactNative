@@ -1,7 +1,7 @@
 import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack';
 import Sources from './StackComponents/Sources';
-import HeadlineDetails from '../HeadlineStack/StackComponents/HeadlineDetails';
+import HeadlineDetails from '../HeadlineDetails';
 import HeadlinesPerSource from './StackComponents/HeadlinesPerSource';
 
 const SourcesStack = () => {

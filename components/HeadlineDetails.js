@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, Image, ScrollView } from 'react-native'
 import {HeadlineDetailsTitle, HeadlineDetailsTitleContainer, HeadlineDetailsAuthor,
-HeadlineDetailsDateAndSource, HeadlineDetailsDivider, HeadlineDetailsContent} from'../../StyledComponents/HeadlineDetailsStyledComponent'
+HeadlineDetailsDateAndSource, HeadlineDetailsDivider, HeadlineDetailsContent} from'./StyledComponents/HeadlineDetailsStyledComponent'
 import Moment from 'react-moment'
 
 const HeadlineDetails = (props) => {

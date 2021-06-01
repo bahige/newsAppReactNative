@@ -27,13 +27,12 @@ text-align: left;
 padding: 2px;
 `
 
-export const ArticleListItemContainer = styled.View`
-height: 500px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: space-evenly;
-margin:5px;
+export const ArticleLastViewedDate  = styled.Text`
+font-size: 18px;
+text-align: left;
+padding: 2px;
+font-weight: bold;
+color: #f00;
 `
 
 export const ClearHistoryText = styled.Text`
@@ -44,4 +43,14 @@ align-self: center;
 color: white;
 padding: 10px;
 margin: 5px;
+`
+
+export const DetailedArticleDivider = styled.View`
+    border-bottom-color: #000;
+    border-bottom-width: 1px;
+    margin: 10px;
+`
+
+export const FlatListFooter = styled.View`
+    height: 150px;
 `

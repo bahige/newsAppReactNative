@@ -1,8 +1,8 @@
 import React from 'react'
-import { FlatList, View, Text } from 'react-native'
 import HeadlinesHistory from './StackComponents/HeadlinesHistory';
 import {createStackNavigator} from '@react-navigation/stack';
-import HeadlineDetails from '../HeadlineStack/StackComponents/HeadlineDetails';
+import HeadlineDetails from '../HeadlineDetails';
+
 
 const HistoryStack = () => {
 

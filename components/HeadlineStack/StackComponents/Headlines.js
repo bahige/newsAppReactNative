@@ -5,6 +5,7 @@ import { getHeadlines } from '../../../redux/actions';
 import PickerContainer from '../../Picker/PickerContainer';
 import DetailedArticle from '../../DetailedArticle';
 import {useFocusEffect} from '@react-navigation/native';
+import {DetailedArticleDivider, FlatListFooter} from '../../StyledComponents/DetailedArticleStyledComponents';
 
 
 const Headlines = (props) => {
@@ -43,7 +44,9 @@ const Headlines = (props) => {
             {articles && 
             <FlatList data = {articles}
                     renderItem = {renderItem}
-                    keyExtractor = { item => item.title}/>
+                    keyExtractor = { item => item.title}
+                    ItemSeparatorComponent = {DetailedArticleDivider}
+                    ListFooterComponent = {FlatListFooter} />
             }
         </View>
     )

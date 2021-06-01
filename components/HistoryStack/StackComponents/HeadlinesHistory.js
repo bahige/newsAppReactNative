@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import { FlatList, View, ScrollView, Pressable } from 'react-native';
+import { FlatList, View, Pressable } from 'react-native';
 import DetailedArticle from '../../DetailedArticle';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {ClearHistoryText} from '../../StyledComponents/DetailedArticleStyledComponents';
+import {DetailedArticleDivider, FlatListFooter} from '../../StyledComponents/DetailedArticleStyledComponents';
 
 const HeadlinesHistory = (props) => {
 
@@ -36,7 +37,9 @@ const HeadlinesHistory = (props) => {
             </Pressable>
             <FlatList data ={articlesArray}
                       renderItem={renderItem}
-                      keyExtractor={(item, index) => index.toString()}/>
+                      keyExtractor={(item, index) => index.toString()}
+                      ItemSeparatorComponent={DetailedArticleDivider}
+                      ListFooterComponent={FlatListFooter}/>
         </View>
     )
 }

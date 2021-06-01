@@ -1,7 +1,7 @@
 import React from 'react'
-import {Image, Pressable, Text} from 'react-native';
+import {Image, Pressable, Text, View, StyleSheet} from 'react-native';
 import {saveArticlesToStorage} from './functions';
-import {ArticleTitle, ArticleListItemContainer, ArticleSource, ArticleDate, ArticleDescription} from './StyledComponents/DetailedArticleStyledComponents';
+import {ArticleTitle, ArticleSource, ArticleDate, ArticleDescription, ArticleLastViewedDate} from './StyledComponents/DetailedArticleStyledComponents';
 import Moment from 'react-moment';
 
 
@@ -15,25 +15,28 @@ const DetailedArticle = (props) => {
     }
 
     return (
-        <ArticleListItemContainer key={index}>
+        <View style={styles.container} key={index}>
             <Pressable onPress={pressHandler}>
-                <Image  style={{width:'90%', height:250, alignSelf:'center'}} source={{ uri: article.urlToImage}}></Image>
+                <Image  style={{width:'95%', height:250, alignSelf:'center'}} source={{ uri: article.urlToImage}}></Image>
                 <ArticleTitle>{article.title}</ArticleTitle>
                 <ArticleDescription>{article.description}</ArticleDescription>
                 <ArticleSource>{article.source && article.source.name}</ArticleSource>
                 <ArticleDate>
                     <Moment format="MMMM DD, YYYY" date={article.publishedAt} element={Text}></Moment> <Text> at </Text> <Moment format="h:mm:ss a" date={article.publishedAt} element={Text}></Moment>
-                    {/* {moment(article.publishedAt).format("MMMM Do YYYY")} at {moment(article.publishedAt).format("h:mm:ss a")} */}
                 </ArticleDate>
-                <ArticleDate>
-                    {article.viewedAt ? <Text>Last Viewed at : </Text> : null}
-                    {/* {article.viewedAt ? <Text>{moment(article.viewedAt).format("MMMM Do YYYY, h:mm:ss a")}  </Text> : null} */}
-                   
+                <ArticleLastViewedDate>
+                    {article.viewedAt ? <Text>Last Viewed at : </Text> : null}                   
                     {article.viewedAt ? <Moment format='MMMM Do YYYY, h:mm:ss a' date={article.viewedAt} element={Text}></Moment>  : null} 
-                </ArticleDate>
+                </ArticleLastViewedDate>
             </Pressable>
-        </ArticleListItemContainer>
+        </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container:{
+        margin:5,
+    }
+})
 
 export default DetailedArticle
