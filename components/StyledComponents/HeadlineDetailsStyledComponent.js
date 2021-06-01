@@ -9,7 +9,7 @@ export const HeadlineDetailsTitleContainer = styled.View`
 
 export const HeadlineDetailsTitle = styled.Text`
     color: #fff;
-    text-align: start;
+    text-align: left;
     font-size: 40px;
     font-weight: bold;
     padding:5px;
@@ -18,7 +18,7 @@ export const HeadlineDetailsTitle = styled.Text`
 
 export const HeadlineDetailsAuthor = styled.Text`
     color: #fff;
-    text-align: start;
+    text-align: left;
     text-transform: uppercase;
     letter-spacing: 2px;
     padding:5px;
@@ -27,7 +27,7 @@ export const HeadlineDetailsAuthor = styled.Text`
 
 export const HeadlineDetailsDateAndSource = styled.Text`
     color: #A9A9A9;
-    text-align: start;
+    text-align: left;
     text-transform: uppercase;
     letter-spacing: 2px;
     padding:5px;

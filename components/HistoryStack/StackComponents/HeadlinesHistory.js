@@ -30,14 +30,14 @@ const HeadlinesHistory = (props) => {
     )
 
     return (
-        <ScrollView>
+        <View>
             <Pressable onPress={removeArticlesFromStorage}> 
                <ClearHistoryText>CLEAR HISTORY</ClearHistoryText>
             </Pressable>
             <FlatList data ={articlesArray}
                       renderItem={renderItem}
-                      keyExtractor={(item, index) => index }/>
-        </ScrollView>
+                      keyExtractor={(item, index) => index.toString()}/>
+        </View>
     )
 }
 

@@ -1,8 +1,10 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useCallback} from 'react'
 import { View, Text, ActivityIndicator, FlatList, Pressable } from 'react-native'
 import {useSelector, useDispatch} from 'react-redux'
 import { getSources } from '../../../redux/actions';
-import {SourceListItem, SourceListButton} from '../../StyledComponents/SourceListItemStyledComponents'
+import {SourceListItem, SourceListButton} from '../../StyledComponents/SourceListItemStyledComponents';
+import {useFocusEffect} from '@react-navigation/native';
+
 
 const Sources = (props) => {
     const {navigation} = props;
@@ -15,6 +17,14 @@ const Sources = (props) => {
         dispatch(getSources());
     }, [])
 
+    useFocusEffect(
+        useCallback(
+            () => {
+                dispatch(getSources());
+            },
+            [],
+        )
+    )
     const renderItem = ({item, index}) => (
         <SourceListItem>
             <Text>{item.name}</Text>
@@ -28,7 +38,7 @@ const Sources = (props) => {
     return (
         <View>
             {isLoading ? <ActivityIndicator size="large"/> :
-            error ? <View> {error} </View> :
+            error ? <Text> {String(error)} </Text> :
             <FlatList  data = {data && data.sources}
                     renderItem = {renderItem}
                     keyExtractor = { item => item.id}/>

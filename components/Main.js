@@ -11,7 +11,7 @@ const Main = () => {
         <Tab.Navigator 
             tabBarOptions = {{
                 activeTintColor:'white',
-                inactiveTintColor:'	#808080',
+                inactiveTintColor:'#808080',
                 labelStyle: {fontSize:14},
                 adaptive:true,
                 activeBackgroundColor:'#000',

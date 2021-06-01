@@ -1,8 +1,9 @@
-import React, {useEffect} from 'react'
-import { View, FlatList, ActivityIndicator } from 'react-native'
+import React, {useCallback, useEffect} from 'react'
+import { View, FlatList, ActivityIndicator, Text } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux';
 import { getHeadlinesBySource } from '../../../redux/actions';
 import DetailedArticle from '../../DetailedArticle';
+import {useFocusEffect} from '@react-navigation/native';
 
 const HeadlinesPerSource = (props) => {
     const headlinesData = useSelector(state => state.headlines);
@@ -17,6 +18,15 @@ const HeadlinesPerSource = (props) => {
         dispatch(getHeadlinesBySource(source))
     }, [])
 
+    useFocusEffect(
+        useCallback(
+            () => {
+                dispatch(getHeadlinesBySource(source))
+            },
+            [],
+        )
+    )
+
     const renderItem = ({item, index}) => (
         <DetailedArticle article ={item} index={index} navigation={navigation}/>
     )
@@ -24,9 +34,9 @@ const HeadlinesPerSource = (props) => {
 
     return (
         <View>
-            {isLoading ? <ActivityIndicator size="large"/> : 
-            error ? <View> {error} </View> :
-            articles && 
+            {isLoading ? <ActivityIndicator size="large"/> : null}
+            {!!error && <Text> {error} </Text>}
+            {articles && 
             <FlatList data = {articles}
                     renderItem = {renderItem}
                     keyExtractor = { item => item.title}/>
