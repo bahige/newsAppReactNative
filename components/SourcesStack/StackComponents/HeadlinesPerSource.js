@@ -35,7 +35,7 @@ const HeadlinesPerSource = (props) => {
 
     return (
         <View>
-            {isLoading ? <ActivityIndicator size="large"/> : null}
+            {isLoading ? <ActivityIndicator size="large" color="#0000ff"/> : null}
             {!!error && <Text> {error} </Text>}
             {articles && 
             <FlatList data = {articles}

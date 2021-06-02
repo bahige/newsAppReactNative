@@ -37,7 +37,7 @@ const Sources = (props) => {
 
     return (
         <View>
-            {isLoading ? <ActivityIndicator size="large"/> :
+            {isLoading ? <ActivityIndicator size="large" color="#0000ff"/> :
             error ? <Text> {String(error)} </Text> :
             <FlatList  data = {data && data.sources}
                     renderItem = {renderItem}

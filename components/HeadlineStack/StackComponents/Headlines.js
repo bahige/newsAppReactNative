@@ -39,9 +39,9 @@ const Headlines = (props) => {
         <View>
             <PickerContainer country={selectedCountry} category={selectedCategory}
                              setCountry={setSelectedCountry} setCategory={setSelectedCategory}/>
-            {isLoading ? <ActivityIndicator size="large"/> : null}
-            {!!error && <Text> {error} </Text> }
-            {articles && 
+            {isLoading ? <ActivityIndicator size="large" color="#0000ff"/>  :
+            !!error ? <Text> {String(error)} </Text> :
+            articles && 
             <FlatList data = {articles}
                     renderItem = {renderItem}
                     keyExtractor = { item => item.title}
