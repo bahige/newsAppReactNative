@@ -16,7 +16,6 @@ const PickerContainer = (props) => {
                 <Picker.Item label="All Countries" value="" enabled={false} />
                 <Picker.Item label="Egypt" value="eg" />
                 <Picker.Item label="UAE" value="ae" />
-                <Picker.Item label="Saudi Arabia" value="sa" />
             </Picker>
             <Picker
                 style={styles.picker}
