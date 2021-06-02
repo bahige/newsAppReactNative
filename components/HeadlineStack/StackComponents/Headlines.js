@@ -14,7 +14,7 @@ const Headlines = (props) => {
     const headlinesData = useSelector(state => state.headlines);
     const {isLoading, data:{articles}, error } = headlinesData;
 
-    const [selectedCountry, setSelectedCountry] = useState('eg');
+    const [selectedCountry, setSelectedCountry] = useState("");
     const [selectedCategory, setSelectedCategory] = useState('business');
 
     const dispatch = useDispatch();
