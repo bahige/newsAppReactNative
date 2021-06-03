@@ -14,6 +14,21 @@ The main page of the app or the first page that loads when the application start
 
 ## Hierarchy of the App Components
 
-1. **App** => **Main** => **HeadlineStack** => **Headlines**( contains **Detailed Article** and **Picker Container** components) => **HeadlineDetails**.
+1. **App** => **Main** => **HeadlineStack** => **Headlines**( contains **DetailedArticle** and **PickerContainer** components) => **HeadlineDetails**.
 2. **App** => **Main** => **SourcesStack** => **Sources** => **HeadlinesPerSource**(contains **Detailed Article** component) => **HeadlineDetails**.
 3. **App** => **Main** => **HeadlineStack** => **HeadlinesHistory** ( contains **Detailed Article** component) => **HeadlineDetails**.
+
+---
+
+# Main Component 
+
+It includes the **BottomTab Navigator** that has three tabs as previously mentioned. We used the **createBottomTabNavigator()** from react-native navigation library to create it.
+
+# Headline Stack Component
+
+We used the **createStackNavigator()** from react-native navigation library to create it. It contains two stacks: The **Headlines** Component and the **HeadlineDetails** Component.
+
+## Picker Component
+
+It contains two pickers from the 'react-native-picker' library that allow us to select the country and the category of the news that we want to read about. It will be used in **Headlines** Component. 
+
