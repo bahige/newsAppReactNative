@@ -16,7 +16,7 @@ The main page of the app or the first page that loads when the application start
 
 1. **App** => **Main** => **HeadlineStack** => **Headlines**( contains **DetailedArticle** and **PickerContainer** components) => **HeadlineDetails**.
 2. **App** => **Main** => **SourcesStack** => **Sources** => **HeadlinesPerSource**(contains **Detailed Article** component) => **HeadlineDetails**.
-3. **App** => **Main** => **HeadlineStack** => **HeadlinesHistory** ( contains **Detailed Article** component) => **HeadlineDetails**.
+3. **App** => **Main** => **HistoryStack** => **HeadlinesHistory** ( contains **Detailed Article** component) => **HeadlineDetails**.
 
 ---
 
@@ -24,11 +24,16 @@ The main page of the app or the first page that loads when the application start
 
 It includes the **BottomTab Navigator** that has three tabs as previously mentioned. We used the **createBottomTabNavigator()** from react-native navigation library to create it.
 
-## Headline Stack Component
+## HeadlineStack, SourceStack, HistoryStack Components
 
-We used the **createStackNavigator()** from react-native navigation library to create it. It contains two stacks: The **Headlines** Component and the **HeadlineDetails** Component.
+We used the **createStackNavigator()** from react-native navigation library to create them. **HeadlineStack** component contains two stacks: The **Headlines** Component and the **HeadlineDetails** Component. Similarly the **HistoryStack** contains two stacks: The **HeadlinesHistory** Component and the **HeadlineDetails** Component again. Finally, the **SourcesStack** component contains three stacks: **Sources**, **HeadlinesPerSource**,and finally again the **HeadlineDetails** Component.
 
 ## Picker Component
 
 It contains two pickers from the 'react-native-picker' library that allow us to select the country and the category of the news that we want to read about. It will be used in **Headlines** Component. 
+
+## DetailArticle Component
+
+This component will be used as the **renderItem** component in the **FlatList** of each of the **Headlines**, **Sources**, and **HeadlinesHistory** components to render each item of the flat list.
+
 
