@@ -20,11 +20,11 @@ The main page of the app or the first page that loads when the application start
 
 ---
 
-# Main Component 
+## Main Component 
 
 It includes the **BottomTab Navigator** that has three tabs as previously mentioned. We used the **createBottomTabNavigator()** from react-native navigation library to create it.
 
-# Headline Stack Component
+## Headline Stack Component
 
 We used the **createStackNavigator()** from react-native navigation library to create it. It contains two stacks: The **Headlines** Component and the **HeadlineDetails** Component.
 
