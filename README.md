@@ -38,7 +38,7 @@ This component will be used as the **renderItem** component in the **FlatList** 
 
 ## Headlines Component
 
-It contains the **PickerContainer** component and a **FlatList** react native component that renders the **DetailArticle** as renderItem. 
+It contains the **PickerContainer** component and a **FlatList** react native component that renders the **DetailArticle** as renderItem. It uses the **useFocusEffect** from the react-native navigation library to refresh the FlatList when we leave the tab and come back to it afterwards. It uses the  **useEffect** hook to execute the getHeadlines() action from the api when the component mounts or updates. 
 
 ## HeadlineDetails Component
 
