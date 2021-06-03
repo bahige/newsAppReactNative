@@ -59,3 +59,16 @@ It is the component used to display the headline articles screen in detail.
 ## Styled-Components Components:
 
 We have three additional files: **DetailedArticleStyledComponents, HeadlineDetailsStyledComponent, SourceListItemStyledComponents** where we created styled Text and Button elements used in the aforementioned components using the **styled-components** library.
+
+---
+
+## Accessing the API on the server
+
+We used **redux and react-redux** to access the API on the server. We defined six files for this purpose:
+
+1. **actionTypes.js** : The type properties of the actions to be dispatched are defined here.
+2. **api.js** : The functions used to access and interact with the API are defined in this file.
+3. **actions.js** : The actions to be dispatched by the components of the app are defined in this file.
+4. **reducers.js** : The reducers that execute a specific function according to the action received are defined here.
+5. **rootReducer.js** : Since redux store receives one and only one  reducer, the reducers defined in **reducers.js** are combined into one and  reducer that interacts with the redux store in this file.
+6. **store.js**:The redux store is defined here.
