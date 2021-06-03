@@ -10,7 +10,7 @@ The main page of the app or the first page that loads when the application start
 
 2. **The Sources Tab** : It shows a list of the available sources of the news outlets. Clicking on the **VIEW** button, takes us to the list of headlines published by this news outlet and similarly clicking on a headline on this list takes us to the detailed article about this headline. 
 
-3. **The History Tab**: It displays the list of headlines that the user visited. If a headline is visited more than once, the headline will be displayed once according to the date it was last visited and won't be displayed twice. Clicking on a headlineon this list takes us to the detailed article about this headline. 
+3. **The History Tab**: It displays the list of headlines that the user visited. If a headline is visited more than once, the headline will be displayed once according to the date it was last visited and won't be displayed twice. Clicking on a headline on this list takes us to the detailed article about this headline. 
 
 ## Hierarchy of the App Components
 
@@ -34,13 +34,28 @@ It contains two pickers from the 'react-native-picker' library that allow us to 
 
 ## DetailArticle Component
 
-This component will be used as the **renderItem** component in the **FlatList** of each of the **Headlines**, **Sources**, and **HeadlinesHistory** components to render each item of the flat list.
+This component will be used as the **renderItem** component in the **FlatList** of each of the **Headlines**, **Sources**, and **HeadlinesHistory** components to render each item of the flat list. Upon pressing on the article, it is saved in the local storage of the app by using the react-native-async-storage library. 
 
 ## Headlines Component
 
-It contains the **PickerContainer** component and a **FlatList** react native component that renders the **DetailArticle** as renderItem. It uses the **useFocusEffect** from the react-native navigation library to refresh the FlatList when we leave the tab and come back to it afterwards. It uses the  **useEffect** hook to execute the getHeadlines() action from the api when the component mounts or updates. 
+It contains the **PickerContainer** component and a **FlatList** react native component that renders the **DetailArticle** as renderItem. It uses the **useFocusEffect** from the react-native navigation library to refresh the FlatList when we leave the tab and come back to it afterwards. It uses the  **useEffect** hook to execute the getHeadlines(country, category) action which reads the top headlines from the api when the component mounts or updates. 
+
+## Sources Component
+
+It contains a **FlatList** react native component that renders a container with the name of the news agency and a **VIEW** button in it  as renderItem. It uses the **useFocusEffect** from the react-native navigation library to refresh the FlatList when we leave the tab and come back to it afterwards. It uses the  **useEffect** hook to execute the getSources() action which reads the sources from the api when the component mounts or updates. 
+
+## HeadlinesPerSource Component
+
+It contains a **FlatList** react native component that renders the **DetailArticle** as renderItem. It uses the **useFocusEffect** from the react-native navigation library to refresh the FlatList when we leave the tab and come back to it afterwards. It uses the  **useEffect** hook to execute the getHeadlines(source) action which reads the headlines of each source from the api when the component mounts or updates. 
+
+## HeadlinesHistory Component
+
+It contains a **FlatList** react native component that renders the **DetailArticle** as renderItem. It uses the  **useEffect** hook to execute the getArticlesFromStorage() async function which reads the articles previously visited by the user from the app's local storage when the component mounts or updates. To read the articles from the local storage, we used the react-native-async-storage library.
 
 ## HeadlineDetails Component
 
 It is the component used to display the headline articles screen in detail.
 
+## Styled-Components Components:
+
+We have three additional files: **DetailedArticleStyledComponents, HeadlineDetailsStyledComponent, SourceListItemStyledComponents** where we created styled Text and Button elements used in the aforementioned components using the **styled-components** library.
